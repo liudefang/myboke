@@ -3,16 +3,16 @@
 {% block title %}登录{% endblock %}
 
 {% block content %}
-<!--suppress XmlInvalidId -->
+
 <div class="col-md-8 col-sm-offset-2 text-center">
     <h1>登录</h1>
     <p>输入用户名和密码</p>
-    <form class="form-horizontal" action="." method="post">{% csrf_token %}
+    <form class="form-horizontal" action="{% url 'account:user_login' %}" method="post">{% csrf_token %}
        <!-- {{form.as_p}}-->
         <div class="row">
 
-            <label for="{{ form.username.id_for_label }}" class="col-sm-5 control-label" style="color:red"><span class="glyphicon glyphicon-user"></span>用户名:</label>
-            <div class="col-sm-6 text-left">{{form.username}}</div>
+            <label for="{{ form.username.id_for_label }}" class="col-md-5 control-label" style="color:red"><span class="glyphicon glyphicon-user"></span>用户名:</label>
+            <div class="col-md-6 text-left">{{form.username}}</div>
         </div>
 
         <div class="row">
